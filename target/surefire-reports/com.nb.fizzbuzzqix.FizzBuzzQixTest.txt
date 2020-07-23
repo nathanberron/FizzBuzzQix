@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.nb.fizzbuzzqix.FizzBuzzQixTest
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s - in com.nb.fizzbuzzqix.FizzBuzzQixTest
