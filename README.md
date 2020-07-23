@@ -1,11 +1,10 @@
 # FizzBuzzQix
-Fizz buzz kata with a TDD approach
+Fizz buzz kata with a *TDD approach*
 
 Maven project realised with IntelliJ
 
-HOW TO RUN IT?
+_HOW_ _TO_ _RUN_ _IT?_
 
-Run:
-
-mvn exec:java -Dexec.mainClass=com.nb.fizzbuzzqix.FizzBuzzQixMain
+Run:  
+*mvn exec:java -Dexec.mainClass=com.nb.fizzbuzzqix.FizzBuzzQixMain*
 
