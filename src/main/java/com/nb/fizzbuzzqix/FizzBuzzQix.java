@@ -18,24 +18,27 @@ public class FizzBuzzQix {
         result = "";
 
         FIZZBUZZQIXEXPECTEDRESULT.forEach(
-                (key,value) -> result += returnOfModulo(numberToEvaluate,key)
+                (key,value) -> returnOfModulo(numberToEvaluate,key)
         );
 
-        for (int i=0 , numLength=stringNumberToEvaluateRepresentation.length(); i < numLength; i++) {
+        for (int i=0, numLength=stringNumberToEvaluateRepresentation.length(); i < numLength; i++) {
             char carToEvaluate = stringNumberToEvaluateRepresentation.charAt(i);
-            if (carToEvaluate == '3') result += "Foo";
-            if (carToEvaluate == '5') result += "Bar";
-            if (carToEvaluate == '7') result += "Qix";
+            FIZZBUZZQIXEXPECTEDRESULT.forEach(
+                    (key,value) -> returnOfCarToEvaluate(carToEvaluate,key)
+            );
         }
-
         if (result.equals(""))  result = stringNumberToEvaluateRepresentation;
-
         return result;
-
     }
 
     private static String returnOfModulo (final int numberToEvaluate, final int key) {
-        if (numberToEvaluate % key == 0) return FIZZBUZZQIXEXPECTEDRESULT.get(key);
+        if (numberToEvaluate % key == 0) return result += FIZZBUZZQIXEXPECTEDRESULT.get(key);
+        return "";
+    }
+
+    private static String returnOfCarToEvaluate (final char carToEvaluate, final int key) {
+        final int radix = 10;
+        if (carToEvaluate == Character.forDigit(key,radix)) return result += FIZZBUZZQIXEXPECTEDRESULT.get(key);
         return "";
     }
 
