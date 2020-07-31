@@ -1,37 +1,46 @@
 package com.nb.fizzbuzzqix;
 
+import java.util.Map;
+
 public class FizzBuzzQix {
 
-    public static String fizzBuzzQixTransformation(int numberToEvaluate) {
+    private static final Map<Integer, String> FIZZBUZZQIXPOSSIBLERESULT = Map.of(
+            3,"Foo",
+            5,"Bar",
+            7,"Qix"
+    );
+
+    private static String result;
+
+    public static String fizzBuzzQixTransformation(final int numberToEvaluate) {
 
         String stringNumberToEvaluateRepresentation = String.valueOf(numberToEvaluate);
-        String result = "";
+        result = "";
 
-        if ((numberToEvaluate % 3) == 0) {
-            result += "Foo";
-        }
-        if ((numberToEvaluate % 5) == 0) {
-            result += "Bar";
-        }
-        if ((numberToEvaluate % 7) == 0) {
-            result += "Qix";
-        }
+        FIZZBUZZQIXPOSSIBLERESULT.forEach(
+                (key,value) -> result += returnOfModulo(numberToEvaluate,key)
+        );
 
-        for (int i=0 ; i < stringNumberToEvaluateRepresentation.length(); i++) {
+        /*result += returnOfModulo(numberToEvaluate,3);
+        result += returnOfModulo(numberToEvaluate,5);
+        result += returnOfModulo(numberToEvaluate,7);*/
+
+        for (int i=0 , numLength=stringNumberToEvaluateRepresentation.length(); i < numLength; i++) {
             char carToEvaluate = stringNumberToEvaluateRepresentation.charAt(i);
-            if (carToEvaluate == '3') {
-                result += "Foo";
-            }
-            if (carToEvaluate == '5') {
-                result += "Bar";
-            }
-            if (carToEvaluate == '7') {
-                result += "Qix";
-            }
+            if (carToEvaluate == '3') result += "Foo";
+            if (carToEvaluate == '5') result += "Bar";
+            if (carToEvaluate == '7') result += "Qix";
         }
+
         if (result.equals(""))  result = stringNumberToEvaluateRepresentation;
 
         return result;
 
     }
+
+    private static String returnOfModulo (final int numberToEvaluate, final int key) {
+        if (numberToEvaluate % key == 0) return FIZZBUZZQIXPOSSIBLERESULT.get(key);
+        return "";
+    }
+
 }
